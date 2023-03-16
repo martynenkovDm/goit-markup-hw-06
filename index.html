@@ -517,6 +517,62 @@
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
         </button>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
+        <form class="modal-form">
+          <div class="modal-field">
+            <label for="user-name"><span class="label-text">Name</span> </label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                name="user-name"
+                class="modal-input"
+                id="user-name"
+                required
+                minlength="2"
+                maxlength="30"
+              />
+              <svg class="modal-icon" width="18px" height="24px">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label for="user-phone"
+              ><span class="label-text">Phone</span>
+            </label>
+            <div class="input-wrap">
+              <input
+                type="tel"
+                name="user-phone"
+                class="modal-input"
+                id="user-phone"
+                required
+              />
+              <svg class="modal-icon" width="18px" height="24px">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label for="user-email"
+              ><span class="label-text">Email</span>
+            </label>
+            <div class="input-wrap">
+              <input
+                type="email"
+                name="user-email"
+                id="user-email"
+                class="modal-input"
+              />
+              <svg class="modal-icon" width="18px" height="24px">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="button modal-send">Send</button>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
