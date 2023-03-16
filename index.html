@@ -569,7 +569,31 @@
               </svg>
             </div>
           </div>
-          <div>
+          <div class="modal-field">
+            <label for="text-area"
+              ><span class="label-text">Comments</span>
+            </label>
+            <textarea
+              name="text-area"
+              id="text-area"
+              class="modal-text-area"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+          <div class="modal-field">
+            <input
+              type="checkbox"
+              name="input-check"
+              id="input-check"
+              class="input-check hidden-tag"
+              value="true"
+            />
+            <label for="input-check" class="terms-text">
+              I accept the terms and conditions of the
+              <a class="modal-terms" href=""> Privacy Policy</a></label
+            >
+          </div>
+          <div class="button-field-wrap">
             <button type="submit" class="button modal-send">Send</button>
           </div>
         </form>

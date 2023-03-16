@@ -17,6 +17,7 @@
   --modal-btn-color: #2e2f42;
   --modal-input-color: rgb(46, 47, 66, 0.2);
   --modal-label-text: #8e8f99;
+  --modal-area-text: rgb(142, 143, 153, 0.5);
 }
 /** RESET */
 
@@ -112,8 +113,10 @@ body {
   cursor: pointer;
   border: none;
   padding: 16px 32px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button.hero-btn {
   border-radius: 4px;
@@ -186,8 +189,7 @@ body {
   text-decoration: none;
   padding-top: 24px;
   padding-bottom: 24px;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:hover {
   color: var(--primary-button-color);
@@ -345,8 +347,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--accent-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-icon {
   fill: #ffffff;
@@ -380,8 +381,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customer-soc-link:is(:hover, :focus) {
@@ -390,8 +390,7 @@ body {
 }
 .customer-soc-icon {
   fill: #8e8f99;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customer-soc-link:is(:hover, :focus) .customer-soc-icon {
   fill: var(--focus-nav-color);
@@ -408,8 +407,7 @@ body {
   gap: 24px;
 }
 .filter-item {
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter {
   display: flex;
@@ -423,17 +421,6 @@ body {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
-/*
-.filter-buttons li:not(:last-child) {
-  margin-right: 24px;
-}
-.filter li:not(:nth-child(n + 7)) {
-  margin-bottom: 48px;
-}
-.filter li:not(:nth-child(3n + 3)) {
-  margin-right: 24px;
-}
-*/
 .card-container {
   padding: 32px 16px 32px 16px;
 }
@@ -504,8 +491,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   background-color: var(--footer-media-color);
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-icon {
   fill: var(--logotype-part-color);
@@ -558,11 +544,14 @@ body {
   align-items: center;
   cursor: pointer;
   margin-left: auto;
-  margin-bottom: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.button-field-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal-button:is(:hover, :focus) {
   background-color: var(--primary-button-color);
 }
@@ -587,6 +576,7 @@ body {
   border: 1px solid var(--modal-input-color);
   border-radius: 4px;
   padding-left: 38px;
+  outline: transparent;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-send {
@@ -617,15 +607,70 @@ body {
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
+
 .modal-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.modal-text-area {
+  width: 100%;
+  height: 120px;
+  background-color: transparent;
+  outline: transparent;
+  border: 1px solid var(--modal-input-color);
+  border-radius: 4px;
+  padding-left: 16px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  resize: none;
+}
+.modal-text-area::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17px;
+  letter-spacing: 0.04em;
+  color: var(--modal-area-text);
+  padding-top: 8px;
+}
+.modal-text-area:focus {
   outline: none;
   border: 1px solid var(--accent-color);
 }
 .modal-input:focus + .modal-icon {
   fill: var(--accent-color);
+}
+
+.modal-terms {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33px;
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+.terms-text {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33px;
+  color: var(--modal-label-text);
+}
+.terms-text::before {
+  content: "";
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--modal-btn-color);
+  border-radius: 2px;
+}
+.input-check:checked + .terms-text::before {
+  background-color: var(--primary-button-color);
+  background-image: url(../images/icons.svg#icon-jackdaw);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
