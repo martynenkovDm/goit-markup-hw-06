@@ -666,11 +666,11 @@ body {
   border-radius: 2px;
 }
 .input-check:checked + .terms-text::before {
+  border: none;
   background-color: var(--primary-button-color);
   background-image: url(../images/icons.svg#icon-jackdaw);
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
 }
 .is-hidden {
   opacity: 0;
