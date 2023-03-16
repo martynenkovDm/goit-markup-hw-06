@@ -503,8 +503,58 @@ body {
 .footer-media {
   margin-left: 120px;
 }
+.footer-form-wrap {
+  margin-left: 80px;
+}
+.form-wrap {
+  display: flex;
+  margin-top: 16px;
+  gap: 24px;
+}
+.footer-input {
+  width: 264px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid var(--main-heading-color);
+  border-radius: 4px;
+  padding-left: 16px;
+  color: var(--main-heading-color);
+  outline: transparent;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-/** MODAL WINDOW*/
+.footer-input::placeholder {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17px;
+  letter-spacing: 0.04em;
+  color: var(--main-heading-color);
+}
+
+.footer-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+
+.footer-button {
+  width: 165px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-icon {
+  fill: var(--main-heading-color);
+}
+/**------------------- MODAL WINDOW*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -622,6 +672,7 @@ body {
   border: 1px solid var(--modal-input-color);
   border-radius: 4px;
   padding-left: 16px;
+  padding-top: 8px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   resize: none;
 }
@@ -630,8 +681,8 @@ body {
   font-size: 12px;
   line-height: 1.17px;
   letter-spacing: 0.04em;
-  color: var(--modal-area-text);
   padding-top: 8px;
+  color: var(--modal-area-text);
 }
 .modal-text-area:focus {
   outline: none;
@@ -664,11 +715,14 @@ body {
   height: 16px;
   border: 1px solid var(--modal-btn-color);
   border-radius: 2px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-check:checked + .terms-text::before {
   border: none;
   background-color: var(--primary-button-color);
-  background-image: url(../images/icons.svg#icon-jackdaw);
+  background-image: url(../images/jackdaw.svg);
   background-repeat: no-repeat;
   background-position: center;
 }
